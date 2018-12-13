@@ -12,14 +12,15 @@ namespace ShoppingCart_WebAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CartDetail
+    public partial class OrderDetail
     {
-        public int CartId { get; set; }
-        public Nullable<int> ItemID { get; set; }
-        public string UserName { get; set; }
-        public Nullable<int> Qty { get; set; }
-        public Nullable<decimal> TotalAmount { get; set; }
+        public int OrderDetailId { get; set; }
+        public Nullable<int> OrderId { get; set; }
+        public Nullable<int> ProductId { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> Total { get; set; }
     
-        public virtual ItemDetail ItemDetail { get; set; }
+        public virtual OrderSummary OrderSummary { get; set; }
+        public virtual ProductMaster ProductMaster { get; set; }
     }
 }

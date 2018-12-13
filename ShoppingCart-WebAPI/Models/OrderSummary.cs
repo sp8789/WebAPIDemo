@@ -12,19 +12,23 @@ namespace ShoppingCart_WebAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ItemDetail
+    public partial class OrderSummary
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ItemDetail()
+        public OrderSummary()
         {
-            this.CartDetails = new HashSet<CartDetail>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
-        public int ItemID { get; set; }
-        public string ItemName { get; set; }
-        public Nullable<decimal> ItemPrice { get; set; }
+        public int OrderId { get; set; }
+        public string OrderNumber { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> CouponId { get; set; }
+        public Nullable<decimal> OrderTotal { get; set; }
     
+        public virtual CouponMaster CouponMaster { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CartDetail> CartDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual UserMaster UserMaster { get; set; }
     }
 }

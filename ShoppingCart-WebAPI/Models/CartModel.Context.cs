@@ -25,7 +25,10 @@ namespace ShoppingCart_WebAPI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CartDetail> CartDetails { get; set; }
-        public virtual DbSet<ItemDetail> ItemDetails { get; set; }
+        public virtual DbSet<CouponMaster> CouponMasters { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<OrderSummary> OrderSummaries { get; set; }
+        public virtual DbSet<ProductMaster> ProductMasters { get; set; }
+        public virtual DbSet<UserMaster> UserMasters { get; set; }
     }
 }

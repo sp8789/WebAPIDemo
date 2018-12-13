@@ -96,54 +96,65 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Models\Cart.Context.tt">
+    <Content Include="Models\CartModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Cart.edmx</DependentUpon>
-      <LastGenOutput>Cart.Context.cs</LastGenOutput>
+      <DependentUpon>CartModel.edmx</DependentUpon>
+      <LastGenOutput>CartModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Cart.tt">
+    <Content Include="Models\CartModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Cart.edmx</DependentUpon>
-      <LastGenOutput>Cart.cs</LastGenOutput>
+      <DependentUpon>CartModel.edmx</DependentUpon>
+      <LastGenOutput>CartModel.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ItemsInCartController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.Context.cs">
+    <Compile Include="Models\CartModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cart.Context.tt</DependentUpon>
+      <DependentUpon>CartModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.cs">
+    <Compile Include="Models\CartModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cart.tt</DependentUpon>
+      <DependentUpon>CartModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.Designer.cs">
+    <Compile Include="Models\CartModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cart.edmx</DependentUpon>
+      <DependentUpon>CartModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CartDetail.cs">
-      <DependentUpon>Cart.tt</DependentUpon>
+    <Compile Include="Models\CommonModel.cs" />
+    <Compile Include="Models\OrderDTO.cs" />
+    <Compile Include="Models\CouponMaster.cs">
+      <DependentUpon>CartModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ItemDetail.cs">
-      <DependentUpon>Cart.tt</DependentUpon>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>CartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderSummary.cs">
+      <DependentUpon>CartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductMaster.cs">
+      <DependentUpon>CartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserMaster.cs">
+      <DependentUpon>CartModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\Cart.edmx">
+    <EntityDeploy Include="Models\CartModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Cart.Designer.cs</LastGenOutput>
+      <LastGenOutput>CartModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Cart.edmx.diagram">
-      <DependentUpon>Cart.edmx</DependentUpon>
+    <Content Include="Models\CartModel.edmx.diagram">
+      <DependentUpon>CartModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
