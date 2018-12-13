@@ -130,7 +130,6 @@
       <DependentUpon>CartModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\CommonModel.cs" />
-    <Compile Include="Models\OrderDTO.cs" />
     <Compile Include="Models\CouponMaster.cs">
       <DependentUpon>CartModel.tt</DependentUpon>
     </Compile>
