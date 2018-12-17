@@ -51,11 +51,11 @@ namespace ShoppingCart_WebAPI.Controllers
             foreach (CommonModel.tblShoppingProduct objProduct in objcommonmodel.Products)
             {
                 objod = new OrderDetail();
-                if (objProduct.ProductId == 1 && objProduct.Quantity == 3)
+                if(objProduct.ProductId==1)
                 {
                     objod.Quantity = objProduct.Quantity;
                     objod.ProductId = objProduct.ProductId;
-                    objod.Total = (objProduct.Quantity - 1) * objProduct.Price;
+                    objod.Total = (objProduct.Quantity - (objProduct.Quantity/3)) * objProduct.Price;
                 }
                 else
                 {
